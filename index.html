@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metehan CV</title>
+    <link rel ="icon" href ="icon/foto2.jpg">
+    
+    <style>
+        body {
+            background-image: url("arkaplan.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.4;
+            color: #333;
+            font-size: 14px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .search-bar {
+            width: 180px;
+            height: 32px;
+            padding: 0 12px;
+            font-size: 13px;
+            border: 1px solid #ccc;
+            border-radius: 16px;
+            outline: none;
+            transition: all 0.2s;
+        }
+        
+        .search-bar:focus {
+            width: 220px;
+            border-color: rgb(41,118,211);
+        }
+
+        .search-container {
+        position: relative;
+        display: inline-block;
+    }
+        
+        .search-button {
+            
+            background-color: rgb(41,118,211);
+            border: none;
+            color: white;
+            height: 32px;
+            padding: 0 15px;
+            border-radius: 16px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+        
+        .search-button:hover {
+            background-color: rgb(31, 98, 181);
+        }
+
+         .search-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 30px;
+        cursor: pointer; 
+    }
+        
+        .compact-button {
+            background-color: white;
+            border: 1px solid rgb(41,118,211);
+            color: rgb(41,118,211);
+            height: 32px;
+            min-width: 120px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s;
+            padding: 0 8px;
+        }
+        
+        .compact-button:hover {
+            background-color: rgb(41,118,211);
+            color: white;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgb(41,118,211);
+            transition: transform 0.3s;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-text h1 {
+            font-size: 20px;
+            margin: 0 0 5px 0;
+            color: rgb(41,118,211);
+        }
+        
+        .profile-text p {
+            font-size: 13px;
+            margin: 0;
+            color: #666;
+        }
+
+        
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .active-section {
+            display: block;
+        }
+        
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .search-box {
+                width: 100%;
+                margin-top: 15px;
+            }
+            
+            .search-bar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <div class="profile-section">
+                <img class="profile-img" src="icon/foto2.jpg" alt="Metehan Profil Fotoğrafı">
+                <div class="profile-text">
+                    <h1>Metehan Aras</h1>
+                    <p>Bilgisayar mühendisliği</p>
+                </div>
+            </div>
+            
+            <div class="search-box">
+                
+                
+                <button class="compact-button" onclick="showSection('personal')">Kişisel Bilgiler</button>
+                <button class="compact-button" onclick="showSection('experience')">Deneyim</button>
+                <button class="compact-button" onclick="showSection('skills')">Yetkinlik</button>
+            </div>
+        </div>
+
+       
+        <div class="search-container">
+    <input type="text" class="search-bar" placeholder="Arama yap...">
+    <img src="search.png" class="search-icon" alt="Ara">
+        </div>
+        
+     
+        <div id="personal" class="content-section active-section">
+            <h2>Kişisel Bilgiler</h2>
+             <p>İsim-Soyisim: Metehan ARAS</br>
+		Doğum tarihi : 13.10.2001</br>
+		Üniversite : karabük Üniversitesi</br>
+		Bölüm : Bilgisayar mühendisliği</p>
+            
+        </div>
+        
+        <div id="experience" class="content-section">
+            <h3 id="#deneyim"> Projeler </h3>
+            <ul>
+                <li>Kendi Youtube sayfamı yaptım</li>
+                <li>Kendi Kasiyer uygulamamı yaptım.</li>
+                <li>başlangıç seviye olarak kendi oyunumu yapıyorum(Souls Like)</li>
+            </ul>
+
+                    
+                   
+         </dl>
+            
+        </div>
+        
+        <div id="skills" class="content-section">
+            <h3 > YETKİNLİKLER </h3>
+            <ul>
+                <li>İleri seviye HTML/CSS </li>
+                 <li>orta düzey JAVA </li>
+                  <li>Başlangıç seviye C++ </li>
+                   <li>Başlangıç seviye JS </li>
+                   <li>C1 seviye ingilizce</li>
+
+            </ul>
+            
+        </div>
+    </div>
+
+    <script>
+        
+        function showSection(sectionId) {
+            
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active-section');
+            });
+            
+            
+            document.getElementById(sectionId).classList.add('active-section');
+        }
+        
+        // Arama fonksiyonu
+        function search() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            alert("Arama yapılıyor: " + searchTerm);
+            // Gerçek arama işlevselliği buraya eklenecek
+        }
+        
+        // Varsayılan olarak kişisel bilgiler bölümünü göster
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('personal');
+        });
+    </script>
+</body>
+</html>
